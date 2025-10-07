@@ -4,53 +4,29 @@ import { useState, useEffect } from 'react'
 import { 
   CheckCircle, 
   Users, 
-  ArrowRight, 
   ChevronLeft, 
   ChevronRight, 
   Menu, 
   X, 
-  Star, 
   Clock, 
   Download,
-  Circle,
-  Play,
-  ExternalLink,
-  TrendingUp,
-  Target,
-  Zap,
-  Brain,
-  Calculator,
-  BarChart3,
-  Lightbulb,
-  Shield,
   Rocket,
   Award,
   BookOpen,
   Video,
   FileText,
   Globe,
-  Smartphone,
-  DollarSign,
-  PieChart,
-  Activity,
-  Settings,
-  Search,
-  MessageSquare,
-  Mail,
-  Share2,
-  Eye,
-  MousePointer,
-  Layers,
-  Filter,
-  Gauge,
-  Briefcase,
-  Trophy,
-  Headphones,
-  Coffee,
+  TrendingUp,
+  Target,
+  Brain,
+  BarChart3,
+  ExternalLink,
   Bookmark,
-  Heart,
-  ThumbsUp
+  Zap,
+  DollarSign
 } from 'lucide-react'
+
+// Interfaces ------------------------------------------------------------------
 
 interface UserProgress {
   currentChapter: number
@@ -89,15 +65,6 @@ interface CaseStudy {
     color: string
   }[]
   keyTakeaways: string[]
-}
-
-interface Tool {
-  name: string
-  category: string
-  description: string
-  pricing: string
-  features: string[]
-  icon: any
 }
 
 const chapters = [
@@ -275,7 +242,7 @@ const chapters = [
         <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
           <div class="flex items-center mb-4">
             <div class="bg-green-100 p-2 rounded-full mr-3">
-              <Star class="w-5 h-5 text-green-600" />
+              <Award class="w-5 h-5 text-green-600" />
             </div>
             <h3 class="text-xl font-bold text-gray-800">E-commerce de Moda - ROI 400%</h3>
           </div>
@@ -498,21 +465,21 @@ const chapters = [
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="text-center p-4 bg-gray-50 rounded-lg">
               <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Play class="w-6 h-6 text-red-600" />
+                <BookOpen class="w-6 h-6 text-red-600" />
               </div>
               <h4 class="font-semibold text-gray-800">Canva Pro</h4>
               <p class="text-sm text-gray-600">Design gráfico simplificado</p>
             </div>
             <div class="text-center p-4 bg-gray-50 rounded-lg">
               <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Circle class="w-6 h-6 text-blue-600" />
+                <BookOpen class="w-6 h-6 text-blue-600" />
               </div>
               <h4 class="font-semibold text-gray-800">Figma</h4>
               <p class="text-sm text-gray-600">Design colaborativo</p>
             </div>
             <div class="text-center p-4 bg-gray-50 rounded-lg">
               <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Download class="w-6 h-6 text-green-600" />
+                <Video class="w-6 h-6 text-green-600" />
               </div>
               <h4 class="font-semibold text-gray-800">Loom</h4>
               <p class="text-sm text-gray-600">Gravação de tela</p>
@@ -775,7 +742,6 @@ const chapters = [
       { id: 25, text: "Estabelecer processo de escalabilidade gradual", completed: false, priority: 'high' as const }
     ]
   },
-  // PARTE 2 - CAPÍTULOS AVANÇADOS
   {
     id: 6,
     title: "Automação e Inteligência Artificial",
@@ -1214,6 +1180,34 @@ const chapters = [
                 <li>• Coletar dados para MMM</li>
                 <li>• Implementar geo-based testing</li>
                 <li>• Criar modelos preditivos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-yellow-50 border border-yellow-300 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">⚠️ Global Expansion Pitfalls</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-red-600 mb-2">❌ Common Mistakes:</h4>
+              <ul class="text-sm text-gray-700 space-y-1">
+                <li>• One-size-fits-all approach</li>
+                <li>• Ignoring local regulations</li>
+                <li>• Poor translation quality</li>
+                <li>• Inadequate local support</li>
+                <li>• Underestimating cultural differences</li>
+                <li>• Insufficient market research</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-green-600 mb-2">✅ Success Factors:</h4>
+              <ul class="text-sm text-gray-700 space-y-1">
+                <li>• Deep cultural understanding</li>
+                <li>• Local team involvement</li>
+                <li>• Gradual market entry</li>
+                <li>• Continuous localization</li>
+                <li>• Strong compliance framework</li>
+                <li>• Patient capital allocation</li>
               </ul>
             </div>
           </div>
@@ -2096,30 +2090,6 @@ const chapters = [
           </div>
         </div>
         
-        <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-4">🌟 Recursos para Continuar Aprendendo</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-white/10 p-4 rounded-lg">
-              <h4 class="font-semibold mb-2">Comunidades & Networking</h4>
-              <ul class="text-sm space-y-1">
-                <li>• Growth Hackers Community</li>
-                <li>• Marketing de Performance Brasil</li>
-                <li>• Digital Marketing Institute</li>
-                <li>• LinkedIn Marketing Groups</li>
-              </ul>
-            </div>
-            <div class="bg-white/10 p-4 rounded-lg">
-              <h4 class="font-semibold mb-2">Conteúdo Avançado</h4>
-              <ul class="text-sm space-y-1">
-                <li>• Marketing Land & Search Engine Land</li>
-                <li>• Growth.org & First Round Review</li>
-                <li>• Google Marketing Platform Blog</li>
-                <li>• Facebook for Business Resources</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
         <div class="bg-gray-900 text-white p-6 rounded-lg">
           <h3 class="text-xl font-bold mb-4">🎯 Sua Jornada Continua</h3>
           <p class="text-lg mb-4">O marketing digital evolui constantemente. Mantenha-se atualizado, continue experimentando e nunca pare de aprender.</p>
@@ -2146,6 +2116,7 @@ const chapters = [
         <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-8 rounded-lg text-center">
           <h3 class="text-2xl font-bold mb-4">🏆 PARABÉNS!</h3>
           <p class="text-lg mb-4">Você completou com sucesso o curso mais completo de Marketing Digital e Tráfego Pago!</p>
+          
           <div class="bg-white/20 p-4 rounded-lg inline-block">
             <div class="text-3xl font-bold mb-2">CERTIFICADO DE CONCLUSÃO</div>
             <div class="text-lg">Marketing Digital & Tráfego Pago</div>
@@ -2190,67 +2161,32 @@ const chapters = [
   }
 ]
 
-const caseStudies: CaseStudy[] = [
-  {
-    title: "E-commerce Fashion: ROI 400%",
-    industry: "Fashion & Retail",
-    challenge: "Alto CAC e baixa retenção de clientes",
-    solution: "Remarketing inteligente + Lookalike audiences + Dynamic ads",
-    results: [
-      { metric: "ROI", value: "400%", color: "green" },
-      { metric: "CAC", value: "-60%", color: "blue" },
-      { metric: "Vendas", value: "+250%", color: "purple" }
-    ],
-    keyTakeaways: [
-      "Remarketing é crucial para e-commerce",
-      "Dynamic ads aumentam relevância",
-      "Lookalike audiences escalam eficientemente"
-    ]
-  },
-  {
-    title: "SaaS B2B: 300% Mais Leads",
-    industry: "Software & Technology",
-    challenge: "Leads insuficientes para time de vendas",
-    solution: "Google Ads + LinkedIn Ads + Marketing de Conteúdo integrado",
-    results: [
-      { metric: "Leads", value: "+300%", color: "green" },
-      { metric: "Conversão", value: "45%", color: "blue" },
-      { metric: "CPL", value: "-40%", color: "purple" }
-    ],
-    keyTakeaways: [
-      "Integração multi-canal é essencial",
-      "LinkedIn funciona bem para B2B",
-      "Conteúdo educativo gera leads qualificados"
-    ]
+const getLevelColor = (level: string) => {
+  switch (level) {
+    case 'Iniciante': return 'bg-green-100 text-green-800'
+    case 'Intermediário': return 'bg-blue-100 text-blue-800'
+    case 'Avançado': return 'bg-purple-100 text-purple-800'
+    case 'Expert': return 'bg-red-100 text-red-800'
+    case 'Conclusão': return 'bg-yellow-100 text-yellow-800'
+    default: return 'bg-gray-100 text-gray-800'
   }
-]
+}
 
-const tools: Tool[] = [
-  {
-    name: "Google Analytics 4",
-    category: "Analytics",
-    description: "Análise completa do comportamento dos usuários",
-    pricing: "Gratuito",
-    features: ["Funis de conversão", "Análise de audiência", "Relatórios personalizados"],
-    icon: BarChart3
-  },
-  {
-    name: "Google Ads",
-    category: "Paid Media",
-    description: "Plataforma de anúncios do Google",
-    pricing: "Pay-per-click",
-    features: ["Search ads", "Display ads", "YouTube ads", "Shopping ads"],
-    icon: Search
-  },
-  {
-    name: "Meta Business Manager",
-    category: "Paid Media",
-    description: "Central de controle para Facebook e Instagram Ads",
-    pricing: "Pay-per-click",
-    features: ["Feed ads", "Stories ads", "Reels ads", "Messenger ads"],
-    icon: Share2
+const getPriorityColor = (priority: 'low' | 'medium' | 'high') => {
+  switch (priority) {
+    case 'high': return 'border-red-300 bg-red-50'
+    case 'medium': return 'border-yellow-300 bg-yellow-50'
+    case 'low': return 'border-green-300 bg-green-50'
   }
-]
+}
+
+const getDifficultyColor = (difficulty: 'easy' | 'medium' | 'hard') => {
+  switch (difficulty) {
+    case 'easy': return 'bg-green-100 text-green-800'
+    case 'medium': return 'bg-yellow-100 text-yellow-800'
+    case 'hard': return 'bg-red-100 text-red-800'
+  }
+}
 
 export default function EBookInterativo() {
   const [currentChapter, setCurrentChapter] = useState(1)
@@ -2267,33 +2203,23 @@ export default function EBookInterativo() {
   })
   const [quizAnswers, setQuizAnswers] = useState<{[key: string]: number}>({})
   const [showQuizResults, setShowQuizResults] = useState<{[key: string]: boolean}>({})
-  const [checklists, setChecklists] = useState<{[key: number]: ChecklistItem[]}>({})
+  const [checklists, setChecklists] = useState<{[key: number]: ChecklistItem[]}>(() => {
+    const savedChecklists = localStorage.getItem('ebook-checklists')
+    if (savedChecklists) {
+      return JSON.parse(savedChecklists)
+    }
+    const initialChecklists: {[key: number]: ChecklistItem[]} = {}
+    chapters.forEach(chapter => {
+      initialChecklists[chapter.id] = chapter.checklist
+    })
+    return initialChecklists
+  })
 
   // Carregar progresso do localStorage
   useEffect(() => {
     const savedProgress = localStorage.getItem('ebook-progress')
     if (savedProgress) {
       setProgress(JSON.parse(savedProgress))
-    }
-
-    const savedChecklists = localStorage.getItem('ebook-checklists')
-    if (savedChecklists) {
-      setChecklists(JSON.parse(savedChecklists))
-    } else {
-      // Inicializar checklists
-      const initialChecklists: {[key: number]: ChecklistItem[]} = {}
-      chapters.forEach(chapter => {
-        initialChecklists[chapter.id] = chapter.checklist
-      })
-      setChecklists(initialChecklists)
-    }
-
-    // Atualizar streak de estudo
-    const today = new Date().toDateString()
-    const lastStudy = localStorage.getItem('last-study-date')
-    if (lastStudy !== today) {
-      localStorage.setItem('last-study-date', today)
-      // Lógica de streak seria implementada aqui
     }
   }, [])
 
@@ -2327,17 +2253,16 @@ export default function EBookInterativo() {
   }
 
   const toggleChecklistItem = (itemId: number) => {
-    setChecklists(prev => ({
-      ...prev,
-      [currentChapter]: prev[currentChapter].map(item =>
+    const newChecklists = {
+      ...checklists,
+      [currentChapter]: checklists[currentChapter].map(item =>
         item.id === itemId ? { ...item, completed: !item.completed } : item
       )
-    }))
+    };
+    setChecklists(newChecklists);
 
     // Atualizar progresso
-    const updatedItems = checklists[currentChapter].map(item =>
-      item.id === itemId ? { ...item, completed: !item.completed } : item
-    )
+    const updatedItems = newChecklists[currentChapter];
     const completedCount = updatedItems.filter(item => item.completed).length
     
     if (completedCount === updatedItems.length && !progress.completedChecklists.includes(currentChapter)) {
@@ -2375,33 +2300,6 @@ export default function EBookInterativo() {
   }
 
   const progressPercentage = ((progress.completedQuizzes.length + progress.completedChecklists.length) / (chapters.length * 2)) * 100
-
-  const getPriorityColor = (priority: 'low' | 'medium' | 'high') => {
-    switch (priority) {
-      case 'high': return 'border-red-300 bg-red-50'
-      case 'medium': return 'border-yellow-300 bg-yellow-50'
-      case 'low': return 'border-green-300 bg-green-50'
-    }
-  }
-
-  const getDifficultyColor = (difficulty: 'easy' | 'medium' | 'hard') => {
-    switch (difficulty) {
-      case 'easy': return 'bg-green-100 text-green-800'
-      case 'medium': return 'bg-yellow-100 text-yellow-800'
-      case 'hard': return 'bg-red-100 text-red-800'
-    }
-  }
-
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case 'Iniciante': return 'bg-green-100 text-green-800'
-      case 'Intermediário': return 'bg-blue-100 text-blue-800'
-      case 'Avançado': return 'bg-purple-100 text-purple-800'
-      case 'Expert': return 'bg-red-100 text-red-800'
-      case 'Conclusão': return 'bg-gold-100 text-gold-800'
-      default: return 'bg-gray-100 text-gray-800'
-    }
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -2517,7 +2415,7 @@ export default function EBookInterativo() {
                             <CheckCircle className="w-3 h-3 text-green-400" />
                           )}
                           {progress.completedChecklists.includes(chapter.id) && (
-                            <Star className="w-3 h-3 text-yellow-400" />
+                            <Award className="w-3 h-3 text-yellow-400" />
                           )}
                           {progress.bookmarks.includes(chapter.id) && (
                             <Bookmark className="w-3 h-3 text-yellow-400" />
@@ -2753,6 +2651,7 @@ export default function EBookInterativo() {
                     <p className="text-sm opacity-90">Templates, planilhas, checklists e certificados para aplicar na prática</p>
                   </div>
                 </div>
+
               </div>
 
               {/* Estatísticas de Progresso */}
