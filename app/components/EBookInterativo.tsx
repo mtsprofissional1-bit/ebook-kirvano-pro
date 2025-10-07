@@ -2191,6 +2191,7 @@ const getDifficultyColor = (difficulty: 'easy' | 'medium' | 'hard') => {
 export default function EBookInterativo() {
   const [currentChapter, setCurrentChapter] = useState(1)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  // CRITICAL FIX: Inicializa o progresso com um valor padrão seguro
   const [progress, setProgress] = useState<UserProgress>({
     currentChapter: 1,
     completedQuizzes: [],
@@ -2203,11 +2204,8 @@ export default function EBookInterativo() {
   })
   const [quizAnswers, setQuizAnswers] = useState<{[key: string]: number}>({})
   const [showQuizResults, setShowQuizResults] = useState<{[key: string]: boolean}>({})
+  // CRITICAL FIX: Inicializa a checklist com um valor padrão vazio (será populado no useEffect)
   const [checklists, setChecklists] = useState<{[key: number]: ChecklistItem[]}>(() => {
-    const savedChecklists = localStorage.getItem('ebook-checklists')
-    if (savedChecklists) {
-      return JSON.parse(savedChecklists)
-    }
     const initialChecklists: {[key: number]: ChecklistItem[]} = {}
     chapters.forEach(chapter => {
       initialChecklists[chapter.id] = chapter.checklist
@@ -2215,11 +2213,16 @@ export default function EBookInterativo() {
     return initialChecklists
   })
 
-  // Carregar progresso do localStorage
+  // CRITICAL FIX: Carregamento do localStorage dentro do useEffect (client-side only)
   useEffect(() => {
     const savedProgress = localStorage.getItem('ebook-progress')
     if (savedProgress) {
       setProgress(JSON.parse(savedProgress))
+    }
+
+    const savedChecklists = localStorage.getItem('ebook-checklists')
+    if (savedChecklists) {
+      setChecklists(JSON.parse(savedChecklists))
     }
   }, [])
 
